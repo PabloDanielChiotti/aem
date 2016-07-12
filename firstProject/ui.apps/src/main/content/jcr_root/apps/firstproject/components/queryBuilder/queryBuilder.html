@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body>
+    	<p>This is the query builder component.</p>
+		<div data-sly-use.info="apps.firstproject.components.queryBuilderComponent.QueryBuilderComponent">
+			<ul data-sly-list.child="${info.resultList}">
+				<li>${child}</li>
+			</ul>        
+		</div>
+	</body>
+</html>

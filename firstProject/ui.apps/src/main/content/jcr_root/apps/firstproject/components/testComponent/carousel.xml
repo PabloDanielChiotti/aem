@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	jcr:primaryType="cq:Panel"
+	title="Carousel">
+	<items jcr:primaryType="cq:WidgetCollection">
+		<configuration
+			jcr:primaryType="cq:Widget"
+			defaultValue="manual"
+			fieldLabel="Image Selection"
+			name="./configuration"
+			type="select"
+			xtype="selection">
+			<options jcr:primaryType="cq:WidgetCollection">
+				<manual
+					jcr:primaryType="nt:unstructured"
+					text="Manual"
+					value="manual"/>
+				<dynamic
+					jcr:primaryType="nt:unstructured"
+					text="Dynamic"
+					value="dynamic"/>
+			</options>
+		</configuration>
+		<assets
+			jcr:primaryType="cq:Widget"
+			collapsed="{Boolean}false"
+			collapsible="{Boolean}true"
+			title="Assets"
+			xtype="dialogfieldset">
+			<items jcr:primaryType="cq:WidgetCollection">
+				<assetList
+					jcr:primaryType="cq:Widget"
+					fieldLabel="Assets"
+					fieldDescription="Click the plus to add a new image"
+					name="./assetsPaths"
+					xtype="multifield">
+					<fieldConfig
+						jcr:primaryType="cq:Widget"
+						rootPath="/content/dam"
+						xtype="pathfield">
+					</fieldConfig>
+				</assetList>
+			</items>
+		</assets>				
+	</items>
+</jcr:root>

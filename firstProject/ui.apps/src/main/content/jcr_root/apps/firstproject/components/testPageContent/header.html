@@ -1,0 +1,13 @@
+<div data-sly-use.pageinfo="apps.firstproject.page.PageTitle">
+	The title of the page is: ${pageinfo.titlePage}.
+</div>
+
+<div data-sly-test="${properties.cq:signupPage}">
+	<a href="${properties.cq:signupPage}.html" data-sly-use.pageinfo="apps.firstproject.page.PageTitle">
+	Link to page ${pageinfo.page.title}</a>
+</div>
+
+<div data-sly-list="${currentPage.listChildren}">
+	<div data-sly-use.counter="${'counter.js' @ index = itemList.index}">
+	${counter.incrementedIndex}- ${item.title}</div>
+</div>
