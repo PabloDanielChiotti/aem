@@ -1,7 +1,5 @@
 package apps.firstproject.components.testComponent;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,28 +15,26 @@ public class TestComponent extends WCMUse {
   protected String image;
   protected String photoFileReference;
   protected String[] assetsPaths;
-  
+
   @Override
   public void activate() {
-    
-
 
     SightlyServiceInterface service =
         getSlingScriptHelper().getService(SightlyServiceInterface.class);
-    //Get detail from a service.
+    // Get detail from a service.
     detail = service.getDeveloperData();
-    
-    //get the title of the page and the title set in the dialog
+
+    // get the title of the page and the title set in the dialog
     String currentPageTitle = getCurrentPage().getProperties().get("jcr:title", String.class);
     title = getProperties().get("title", currentPageTitle);
-    
-    //get the path of the image uploaded
+
+    // get the path of the image uploaded
     image = getProperties().get("image", "no image charged");
-    
-    //get the photo reference
+
+    // get the photo reference
     photoFileReference = getProperties().get("photoFileReference", null);
-    
-    //get the paths charged in the dialog
+
+    // get the paths charged in the dialog
     assetsPaths = getProperties().get("assetsPaths", null);
   }
 
@@ -57,9 +53,9 @@ public class TestComponent extends WCMUse {
   public String getPhotoFileReference() {
     return this.photoFileReference;
   }
-  
+
   public String[] getAssetsPaths() {
     return this.assetsPaths;
   }
-  
+
 }
